@@ -5,11 +5,10 @@ def frequencies(items):
     frequencies = {}
     item1 = items
     for i in range(len(items)):
-        if(isinstance(items[i],str)):
-            if(can_conv(items[i])):
-                j = int(items[i])
-                items[i] = j
-                print(items[i])
+        if(isinstance(items[i],int)):
+            j = str(items[i])
+            items[i] = j
+            print(items[i])
     frequencies = dict.fromkeys(items,0)
 
     keys = frequencies.keys()
@@ -22,13 +21,5 @@ def frequencies(items):
             frequencies.update({key:counter})
 
 
-
     return frequencies
-
-def can_conv(string):
-    try:
-        int(string)
-        return True
-    except ValueError:
-        return False
 
